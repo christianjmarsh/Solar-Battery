@@ -81,13 +81,6 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:19px;heigh
 .rvl.g{color:var(--green)} .rvl.o{color:var(--amber)}
 .disc{font-size:0.69rem;color:var(--muted);margin-top:1.3rem;line-height:1.55}
 
-#systems{background:var(--navy-mid)}
-.sysg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:3.2rem}
-.sysc{border:1px solid var(--border);border-radius:8px;padding:2.2rem 1.85rem;transition:all 0.3s;background:rgba(255,255,255,0.03)}
-.sysc:hover{border-color:rgba(245,166,35,0.36);transform:translateY(-4px);background:rgba(255,255,255,0.06)}
-.sysc.feat{border-color:var(--amber);background:rgba(245,166,35,0.05)}
-.badge{display:inline-block;background:var(--amber);color:#0d2a4a;font-size:0.66rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:0.18rem 0.65rem;border-radius:3px;margin-bottom:1.3rem}
-.sysc h3{font-family:'Bebas Neue',sans-serif;font-size:1.78rem;margin-bottom:0.26rem}
 .skw{color:var(--teal);font-size:0.83rem;font-weight:600;margin-bottom:1.3rem}
 .sf{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.8rem}
 .sf li{font-size:0.84rem;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:0.56rem}
@@ -95,13 +88,15 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:19px;heigh
 .sp{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;margin-bottom:0.22rem}
 .sn2{font-size:0.74rem;color:var(--muted)}
 
-#brands{background:#0b2643;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+#brands{background:var(--navy-mid)}
 .brg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:3.2rem}
 .brc{border:1px solid var(--border);border-radius:8px;padding:2.2rem 1.85rem;background:rgba(255,255,255,0.03);display:flex;flex-direction:column;scroll-margin-top:90px;transition:all 0.3s}
 .brc:hover,.brc:target{border-color:rgba(245,166,35,0.36);background:rgba(255,255,255,0.06)}
 .brc h3{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:1px;margin-bottom:0.26rem}
 .brc .skw{margin-bottom:1rem}
-.brc p{font-size:0.86rem;color:rgba(255,255,255,0.6);line-height:1.7;font-weight:300;margin-bottom:1.6rem;flex-grow:1}
+.brc p{font-size:0.86rem;color:rgba(255,255,255,0.6);line-height:1.7;font-weight:300;margin-bottom:1.3rem}
+.brc .sf{flex-grow:1}
+.brc .sn2{margin-bottom:1.4rem}
 .brc .btn-p{width:100%}
 
 #why{background:#0d2a4a}
@@ -195,7 +190,7 @@ footer p{color:var(--muted);font-size:0.78rem}
   section{padding:3.6rem 1.3rem}
   .hero{padding:6.2rem 1.3rem 2.6rem}
   .hero-vis{display:none}
-  .cg,.sysg,.brg,.wyg,.fgrp{grid-template-columns:1fr}
+  .cg,.brg,.wyg,.fgrp{grid-template-columns:1fr}
   footer{flex-direction:column;gap:1.3rem;text-align:center;padding:1.9rem 1.3rem}
   .flinks{justify-content:center}
 }
@@ -228,9 +223,8 @@ src="https://www.facebook.com/tr?id=1856530718356539&ev=PageView&noscript=1"
   <ul>
     <li><a href="#how">How It Works</a></li>
     <li><a href="#calculator">Calculator</a></li>
-    <li><a href="#systems">Systems</a></li>
     <li><a href="#benefits">Battery Benefits</a></li>
-    <li><a href="#brands">Brands</a></li>
+    <li><a href="#brands">Packages</a></li>
     <li><a href="#why">Why Us</a></li>
     <li><a href="#blog">Blog</a></li>
   </ul>
@@ -316,8 +310,8 @@ src="https://www.facebook.com/tr?id=1856530718356539&ev=PageView&noscript=1"
   <div class="steps">
     <div class="step"><div class="sno">01</div><div class="sico">📞</div><h3>Free Consultation</h3><p>Book a call or site visit. We assess your energy usage, roof suitability and goals — no hard sell, just honest expert advice.</p></div>
     <div class="step"><div class="sno">02</div><div class="sico">📐</div><h3>Custom Design</h3><p>Our engineers design a system sized perfectly for your home. We handle all permits and network applications.</p></div>
-    <div class="step"><div class="sno">03</div><div class="sico">🔧</div><h3>Professional Install</h3><p>CEC-accredited installers complete most residential systems in a single day. Zero disruption, full clean-up guaranteed.</p></div>
-    <div class="step"><div class="sno">04</div><div class="sico">📊</div><h3>Monitor &amp; Save</h3><p>Track real-time generation, storage and savings via our app. 10-year performance guarantee included.</p></div>
+    <div class="step"><div class="sno">03</div><div class="sico">🔧</div><h3>Professional Install</h3><p>SAA-accredited installers complete your installation in a single day, with minimal disruption.</p></div>
+    <div class="step"><div class="sno">04</div><div class="sico">🔋</div><h3>Store &amp; Save</h3><p>Your battery stores excess solar for use at night, backed by 10-year manufacturer and workmanship warranties.</p></div>
   </div>
 </section>
 
@@ -347,47 +341,30 @@ src="https://www.facebook.com/tr?id=1856530718356539&ev=PageView&noscript=1"
   </div>
 </section>
 
-<section id="systems">
-  <div class="sl-sec">System Packages</div>
-  <div class="st">Find your <em>perfect</em> system</div>
-  <div class="sysg">
-    <div class="sysc">
-      <h3>Essential</h3><div class="skw">6.6 kW Solar + 10 kWh Battery</div>
-      <ul class="sf"><li>Ideal for 1–2 person households</li><li>Premium tier-1 panels</li><li>Hybrid inverter included</li><li>Smart monitoring app</li><li>10-year workmanship warranty</li></ul>
-      <div class="sp">From $9,990</div><div class="sn2">After STC government rebate</div>
-    </div>
-    <div class="sysc feat">
-      <div class="badge">Most Popular</div>
-      <h3>Family</h3><div class="skw">13.2 kW Solar + 20 kWh Battery</div>
-      <ul class="sf"><li>Ideal for 3–5 person households</li><li>Bifacial high-efficiency panels</li><li>Backup power capability</li><li>EV charger ready</li><li>10-year performance guarantee</li></ul>
-      <div class="sp">From $17,490</div><div class="sn2">After STC government rebate</div>
-    </div>
-    <div class="sysc">
-      <h3>PowerHouse</h3><div class="skw">20+ kW Solar + 30 kWh Battery</div>
-      <ul class="sf"><li>Large homes &amp; small businesses</li><li>Full home backup capable</li><li>3-phase power compatible</li><li>Virtual power plant ready</li><li>Priority support &amp; annual service</li></ul>
-      <div class="sp">From $26,990</div><div class="sn2">Custom engineered for your property</div>
-    </div>
-  </div>
-</section>
-
 <section id="brands">
-  <div class="sl-sec">Our Battery Brands</div>
-  <div class="st">Three brands we <em>trust</em></div>
-  <p class="ss">We supply and install home batteries from Fox ESS, GoodWe and Sigenergy, sized to your home and covered by full manufacturer warranties.</p>
+  <div class="sl-sec">Battery Packages</div>
+  <div class="st">Three trusted brands,<br><em>all-inclusive</em> pricing</div>
+  <p class="ss">Every package includes a 10 kW hybrid inverter, GST and the STC government rebate, installed by SAA-accredited installers.</p>
   <div class="brg">
     <div class="brc" id="foxess">
-      <h3>Fox ESS</h3><div class="skw">Stackable home batteries</div>
-      <p>Battery modules that pair with Fox ESS hybrid inverters, so you can start with the storage you need and add more later.</p>
+      <h3>Fox ESS</h3><div class="skw">28 kWh Battery · Stackable</div>
+      <p>Battery modules that pair with a Fox ESS hybrid inverter, so you can add more storage later.</p>
+      <ul class="sf"><li>28 kWh home battery</li><li>10 kW hybrid inverter included</li><li>10-year manufacturer warranty</li><li>10-year workmanship warranty</li><li>Installed in a single day</li></ul>
+      <div class="sp">$5,990</div><div class="sn2">Includes GST &amp; STC government rebate</div>
       <button class="btn-p" onclick="openBooking('Fox ESS')">Get a Fox ESS Quote →</button>
     </div>
     <div class="brc" id="goodwe">
-      <h3>GoodWe</h3><div class="skw">Inverter &amp; battery specialist</div>
-      <p>A long-established inverter maker whose Lynx Home batteries pair with GoodWe hybrid inverters for a matched solar and storage system.</p>
+      <h3>GoodWe</h3><div class="skw">25 kWh Battery · Lynx Home</div>
+      <p>A long-established inverter maker whose Lynx Home batteries pair with a GoodWe hybrid inverter.</p>
+      <ul class="sf"><li>25 kWh home battery</li><li>10 kW hybrid inverter included</li><li>10-year manufacturer warranty</li><li>10-year workmanship warranty</li><li>Installed in a single day</li></ul>
+      <div class="sp">$8,990</div><div class="sn2">Includes GST &amp; STC government rebate</div>
       <button class="btn-p" onclick="openBooking('GoodWe')">Get a GoodWe Quote →</button>
     </div>
     <div class="brc" id="sigenergy">
-      <h3>Sigenergy</h3><div class="skw">All-in-one SigenStor system</div>
-      <p>Inverter, battery and optional EV charging in one stacked unit, managed from a single app.</p>
+      <h3>Sigenergy</h3><div class="skw">24 kWh Battery · SigenStor</div>
+      <p>An all-in-one system with inverter and battery modules in one sleek stacked unit.</p>
+      <ul class="sf"><li>24 kWh home battery</li><li>10 kW hybrid inverter included</li><li>10-year manufacturer warranty</li><li>10-year workmanship warranty</li><li>Installed in a single day</li></ul>
+      <div class="sp">$12,799</div><div class="sn2">Includes GST &amp; STC government rebate</div>
       <button class="btn-p" onclick="openBooking('Sigenergy')">Get a Sigenergy Quote →</button>
     </div>
   </div>
@@ -397,12 +374,12 @@ src="https://www.facebook.com/tr?id=1856530718356539&ev=PageView&noscript=1"
   <div class="sl-sec">Why Choose Us</div>
   <div class="st">The difference is in<br>the <em>details</em></div>
   <div class="wyg">
-    <div class="wyc"><div class="wyico">🎓</div><div><h3>CEC Accredited Installers</h3><p>Every installer is Clean Energy Council accredited. No subcontracting, no shortcuts — qualified, insured professionals every time.</p></div></div>
-    <div class="wyc"><div class="wyico">🛡️</div><div><h3>10-Year Performance Guarantee</h3><p>We guarantee your system will perform as designed for a decade. If it doesn't, we fix it — free of charge.</p></div></div>
-    <div class="wyc"><div class="wyico">📱</div><div><h3>Real-Time Monitoring</h3><p>Track solar generation, battery charge and grid usage live via our intuitive app. Know your savings down to the cent.</p></div></div>
+    <div class="wyc"><div class="wyico">🎓</div><div><h3>SAA Accredited Installers</h3><p>Every installation is carried out by installers accredited by Solar Accreditation Australia (SAA).</p></div></div>
+    <div class="wyc"><div class="wyico">🛡️</div><div><h3>10 + 10 Year Warranties</h3><p>A 10-year manufacturer warranty on your battery and a 10-year workmanship warranty on our installation.</p></div></div>
+    <div class="wyc"><div class="wyico">💲</div><div><h3>All-Inclusive Pricing</h3><p>Package prices include a 10 kW hybrid inverter, GST and the STC government rebate. No hidden extras.</p></div></div>
     <div class="wyc"><div class="wyico">🔋</div><div><h3>Premium Battery Brands</h3><p>We only install proven brands — Fox ESS, GoodWe and Sigenergy — backed by full manufacturer warranties.</p></div></div>
-    <div class="wyc"><div class="wyico">☎️</div><div><h3>Local SE Queensland Team</h3><p>Based in Brisbane and servicing the Gold Coast, Sunshine Coast and Toowoomba. Real local support, same-day callbacks, and technicians who know QLD network requirements inside out.</p></div></div>
-    <div class="wyc"><div class="wyico">⚡</div><div><h3>Fast, Clean Installations</h3><p>Most residential systems completed in a single day. Our teams leave your property clean and your system running perfectly.</p></div></div>
+    <div class="wyc"><div class="wyico">☎️</div><div><h3>Local SE Queensland Team</h3><p>Based in Brisbane and servicing the Gold Coast, Sunshine Coast and Toowoomba. Real local support from technicians who know QLD network requirements inside out.</p></div></div>
+    <div class="wyc"><div class="wyico">⚡</div><div><h3>Fast, Clean Installations</h3><p>Your system is installed in a single day, and our team leaves your property clean.</p></div></div>
   </div>
 </section>
 
@@ -473,7 +450,7 @@ src="https://www.facebook.com/tr?id=1856530718356539&ev=PageView&noscript=1"
 
 <footer>
   <div class="fb"><img src="logo.webp" alt="logo" width="44" height="44" loading="lazy"><span>Brisbane Solar Battery Systems</span></div>
-  <p>© 2026 Brisbane Solar Battery Systems Pty Ltd · ABN 67 437 267 923 · CEC Approved Retailer</p>
+  <p>© 2026 Brisbane Solar Battery Systems Pty Ltd · ABN 67 437 267 923</p>
   <div class="flinks"><a href="privacy-policy.html">Privacy</a><a href="#" onclick="openContact();return false">Contact</a></div>
 </footer>
 
