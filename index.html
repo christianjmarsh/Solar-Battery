@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brisbane Solar Battery Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://app.trysoro.com">
+<link rel="preconnect" href="https://book.servicem8.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#1B4F87;--navy-deep:#0d2a4a;--navy-mid:#0f2f50;--green:#3EA833;--amber:#F5A623;--amber-deep:#E8891A;--teal:#2AB5B0;--white:#F8F9FA;--muted:#8FA3BC;--border:rgba(255,255,255,0.09)}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#0d2a4a;color:#F8F9FA;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0.75rem 3rem;background:rgba(13,42,74,0.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.nav-brand{display:flex;align-items:center;gap:0.7rem;text-decoration:none}
+.nav-brand img{width:44px;height:44px;object-fit:contain}
+.nb-text .l1{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:1.5px;color:#F8F9FA;display:block;line-height:1.1}
+.nb-text .l2{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:1.5px;color:var(--amber);display:block;line-height:1.1}
+nav ul{display:flex;gap:2rem;list-style:none}
+nav ul a{color:rgba(255,255,255,0.62);text-decoration:none;font-size:0.86rem;font-weight:500;transition:color 0.2s}
+nav ul a:hover{color:#fff}
+.nav-cta{background:var(--amber);color:#0d2a4a;border:none;padding:0.58rem 1.35rem;font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.86rem;border-radius:4px;cursor:pointer;transition:all 0.2s}
+.nav-cta:hover{background:var(--amber-deep);transform:translateY(-1px)}
+.nav-cta-ghost{background:transparent;color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.22);padding:0.58rem 1.2rem;font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.86rem;border-radius:4px;cursor:pointer;transition:all 0.2s}
+.nav-cta-ghost:hover{border-color:rgba(255,255,255,0.5);color:#fff;background:rgba(255,255,255,0.07)}
+
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:7rem 4rem 4rem}
+.hero-photo{position:absolute;inset:0;background-image:url("hero.webp");background-size:cover;background-position:center;filter:blur(5px) brightness(0.32);transform:scale(1.06);z-index:0}.hero-bg{position:absolute;inset:0;background:linear-gradient(158deg,rgba(5,14,28,0.78) 0%,rgba(13,42,74,0.68) 60%,rgba(5,14,28,0.82) 100%);z-index:1}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);background-size:58px 58px;z-index:2}
+.hero-content{position:relative;z-index:3;max-width:640px}
+.eyebrow{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(62,168,51,0.14);border:1px solid rgba(62,168,51,0.32);color:#7dda72;padding:0.36rem 0.95rem;border-radius:20px;font-size:0.74rem;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:1.3rem;animation:fadeUp 0.8s ease both}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7.2vw,6.5rem);line-height:0.92;letter-spacing:1px;margin-bottom:1.35rem;animation:fadeUp 0.8s 0.1s ease both;text-shadow:0 2px 16px rgba(0,0,0,0.8)}
+h1 .a1{color:var(--amber)} h1 .a2{color:var(--teal)}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.88);line-height:1.76;max-width:480px;margin-bottom:2.3rem;animation:fadeUp 0.8s 0.2s ease both;font-weight:400;text-shadow:0 1px 8px rgba(0,0,0,0.7)}
+.hero-btns{display:flex;gap:0.9rem;flex-wrap:wrap;animation:fadeUp 0.8s 0.3s ease both}
+.btn-p{background:var(--amber);color:#0d2a4a;border:none;padding:0.92rem 1.95rem;font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.96rem;border-radius:4px;cursor:pointer;transition:all 0.2s}
+.btn-p:hover{background:var(--amber-deep);transform:translateY(-2px);box-shadow:0 8px 28px rgba(245,166,35,0.3)}
+.btn-g{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.22);padding:0.92rem 1.95rem;font-family:'DM Sans',sans-serif;font-weight:500;font-size:0.96rem;border-radius:4px;cursor:pointer;transition:all 0.2s}
+.btn-g:hover{border-color:rgba(255,255,255,0.46);background:rgba(255,255,255,0.06)}
+.stats{display:flex;gap:2.6rem;margin-top:3.8rem;padding-top:1.9rem;border-top:1px solid rgba(255,255,255,0.1);animation:fadeUp 0.8s 0.4s ease both}
+.sn{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;color:var(--teal);line-height:1}
+.sl{font-size:0.7rem;color:var(--muted);font-weight:500;margin-top:0.18rem;letter-spacing:0.6px;text-transform:uppercase}
+.hero-vis{position:absolute;right:3%;top:50%;transform:translateY(-50%);z-index:1;width:40%;max-width:490px;animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(-50%)}50%{transform:translateY(calc(-50% - 16px))}}
+
+section{padding:5.5rem 4rem}
+.sl-sec{font-size:0.7rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);margin-bottom:0.65rem}
+.st{font-family:'Playfair Display',serif;font-size:clamp(1.85rem,3.4vw,2.8rem);line-height:1.18;margin-bottom:0.85rem}
+.st em{color:var(--amber);font-style:italic}
+.ss{color:rgba(255,255,255,0.56);font-size:0.98rem;line-height:1.72;max-width:520px;font-weight:300}
+
+#how{background:var(--navy-mid)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:2px;margin-top:3.2rem}
+.step{background:rgba(255,255,255,0.04);border:1px solid var(--border);padding:2.3rem 1.8rem;position:relative;transition:background 0.3s}
+.step:hover{background:rgba(255,255,255,0.07)}
+.sno{font-family:'Bebas Neue',sans-serif;font-size:4.6rem;line-height:1;color:rgba(42,181,176,0.1);position:absolute;top:0.8rem;right:1.3rem}
+.sico{font-size:1.85rem;margin-bottom:0.85rem}
+.step h3{font-size:0.97rem;font-weight:600;margin-bottom:0.52rem}
+.step p{color:rgba(255,255,255,0.54);font-size:0.84rem;line-height:1.65;font-weight:300}
+
+#calculator{background:#0d2a4a}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:3.3rem;margin-top:3.2rem;align-items:start}
+.cf{display:flex;flex-direction:column;gap:1.8rem}
+.f label{display:block;font-size:0.77rem;font-weight:600;color:var(--muted);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:0.65rem}
+.fv{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;margin-bottom:0.42rem}
+input[type=range]{-webkit-appearance:none;width:100%;height:4px;background:rgba(255,255,255,0.11);border-radius:2px;outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:19px;height:19px;border-radius:50%;background:var(--amber);cursor:pointer;box-shadow:0 0 0 4px rgba(245,166,35,0.18)}
+.rl{display:flex;justify-content:space-between;font-size:0.69rem;color:var(--muted);margin-top:0.35rem}
+.rb{background:linear-gradient(135deg,rgba(27,79,135,0.42) 0%,rgba(42,181,176,0.11) 100%);border:1px solid rgba(42,181,176,0.26);border-radius:10px;padding:2.4rem 2.2rem;position:sticky;top:90px}
+.rb-lbl{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:0.38rem}
+.rb-big{font-family:'Bebas Neue',sans-serif;font-size:4.6rem;color:var(--amber);line-height:1;margin-bottom:0.22rem}
+.rb-sub{color:var(--muted);font-size:0.83rem;margin-bottom:2rem}
+.rrows{display:flex;flex-direction:column;gap:0.8rem}
+.rrow{display:flex;justify-content:space-between;align-items:center;padding:0.82rem 0.95rem;background:rgba(255,255,255,0.05);border-radius:6px}
+.rrow .rlb{font-size:0.78rem;color:rgba(255,255,255,0.56)}
+.rrow .rvl{font-family:'Bebas Neue',sans-serif;font-size:1.32rem}
+.rvl.g{color:var(--green)} .rvl.o{color:var(--amber)}
+.disc{font-size:0.69rem;color:var(--muted);margin-top:1.3rem;line-height:1.55}
+
+#systems{background:var(--navy-mid)}
+.sysg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:3.2rem}
+.sysc{border:1px solid var(--border);border-radius:8px;padding:2.2rem 1.85rem;transition:all 0.3s;background:rgba(255,255,255,0.03)}
+.sysc:hover{border-color:rgba(245,166,35,0.36);transform:translateY(-4px);background:rgba(255,255,255,0.06)}
+.sysc.feat{border-color:var(--amber);background:rgba(245,166,35,0.05)}
+.badge{display:inline-block;background:var(--amber);color:#0d2a4a;font-size:0.66rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:0.18rem 0.65rem;border-radius:3px;margin-bottom:1.3rem}
+.sysc h3{font-family:'Bebas Neue',sans-serif;font-size:1.78rem;margin-bottom:0.26rem}
+.skw{color:var(--teal);font-size:0.83rem;font-weight:600;margin-bottom:1.3rem}
+.sf{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.8rem}
+.sf li{font-size:0.84rem;color:rgba(255,255,255,0.6);display:flex;align-items:center;gap:0.56rem}
+.sf li::before{content:'✓';color:var(--green);font-weight:800;flex-shrink:0}
+.sp{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;margin-bottom:0.22rem}
+.sn2{font-size:0.74rem;color:var(--muted)}
+
+#why{background:#0d2a4a}
+.wyg{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-top:3.2rem}
+.wyc{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:1.85rem;display:flex;gap:1.3rem;align-items:flex-start;transition:background 0.3s}
+.wyc:hover{background:rgba(255,255,255,0.07)}
+.wyico{font-size:1.85rem;flex-shrink:0}
+.wyc h3{font-size:0.96rem;font-weight:600;margin-bottom:0.35rem}
+.wyc p{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.65;font-weight:300}
+
+#benefits{background:var(--navy-mid)}
+.beng{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-top:3.2rem}
+.benc{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:1.85rem;display:flex;gap:1.3rem;align-items:flex-start;transition:all 0.3s;position:relative;overflow:hidden}
+.benc::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(42,181,176,0.06) 0%,transparent 60%);opacity:0;transition:opacity 0.3s}
+.benc:hover{border-color:rgba(42,181,176,0.32);background:rgba(255,255,255,0.07)}
+.benc:hover::before{opacity:1}
+.benico{font-size:1.85rem;flex-shrink:0}
+.benc h3{font-size:0.96rem;font-weight:600;margin-bottom:0.35rem}
+.benc p{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.65;font-weight:300}
+
+#testi{background:#0d2a4a}
+.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:3.2rem}
+.tc{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:1.85rem}
+.stars{color:var(--amber);font-size:0.93rem;margin-bottom:0.85rem;letter-spacing:2px}
+.tq{font-size:0.88rem;color:rgba(255,255,255,0.61);line-height:1.75;margin-bottom:1.35rem;font-style:italic;font-weight:300}
+.tw{font-weight:600;font-size:0.87rem}
+.tl2{font-size:0.74rem;color:var(--muted)}
+
+.cta-band{background:linear-gradient(135deg,rgba(62,168,51,0.13) 0%,rgba(42,181,176,0.1) 100%);border-top:1px solid rgba(62,168,51,0.2);border-bottom:1px solid rgba(42,181,176,0.16);padding:4.8rem 4rem;text-align:center}
+.cta-band h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.3rem,4.8vw,3.8rem);margin-bottom:0.85rem}
+.cta-band p{color:rgba(255,255,255,0.6);font-size:0.98rem;max-width:450px;margin:0 auto 2.2rem;font-weight:300}
+
+footer{background:#050f1c;border-top:1px solid rgba(255,255,255,0.07);padding:2.2rem 4rem;display:flex;justify-content:space-between;align-items:center}
+.fb{display:flex;align-items:center;gap:0.55rem}
+.fb img{width:32px;height:32px;object-fit:contain;opacity:0.8}
+.fb span{font-family:'Bebas Neue',sans-serif;font-size:0.95rem;color:rgba(255,255,255,0.62);letter-spacing:1px}
+footer p{color:var(--muted);font-size:0.78rem}
+.flinks{display:flex;gap:1.7rem}
+.flinks a{color:var(--muted);text-decoration:none;font-size:0.78rem;transition:color 0.2s}
+.flinks a:hover{color:#fff}
+
+
+#contact{background:#0d2a4a;min-height:100vh;display:none;position:fixed;inset:0;z-index:300;overflow-y:auto}
+#contact.active{display:block}
+.cti{max-width:560px;margin:0 auto;padding:2.6rem 1.9rem 5rem}
+.ct-success{display:none;text-align:center;padding:4rem 2rem}
+.ct-success.active{display:block}
+.ct-success .tick{font-size:3.5rem;margin-bottom:1.3rem}
+.ct-success h2{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;margin-bottom:0.75rem}
+.ct-success p{color:rgba(255,255,255,0.6);font-size:0.98rem;line-height:1.72}
+
+#booking{background:#0d2a4a;min-height:100vh;display:none;position:fixed;inset:0;z-index:300;overflow-y:auto}
+#booking.active{display:block}
+.bki{max-width:670px;margin:0 auto;padding:2.6rem 1.9rem 5rem}
+.bkback{display:flex;align-items:center;gap:0.48rem;background:none;border:none;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.87rem;margin-bottom:2.6rem;transition:color 0.2s;padding:0}
+.bkback:hover{color:#fff}
+.bkh{text-align:center;margin-bottom:2.6rem}
+.bklogo{display:flex;align-items:center;justify-content:center;gap:0.65rem;margin-bottom:1.3rem}
+.bklogo img{width:48px;height:48px;object-fit:contain}
+.bklt .bl1{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:1.5px;color:#fff;display:block;line-height:1.1}
+.bklt .bl2{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:1.5px;color:var(--amber);display:block;line-height:1.1}
+.bkh h2{font-family:'Playfair Display',serif;font-size:1.88rem;margin-bottom:0.65rem}
+.bkh p{color:var(--muted);font-size:0.95rem;font-weight:300}
+.bkform{display:flex;flex-direction:column;gap:2.2rem}
+.bks{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:1.85rem}
+.bks h3{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:1.3rem}
+.fg2{display:flex;flex-direction:column;gap:0.42rem;margin-bottom:1.05rem}
+.fg2:last-child{margin-bottom:0}
+.fg2 label{font-size:0.87rem;font-weight:500}
+.fg2 input,.fg2 select,.fg2 textarea{background:rgba(255,255,255,0.06);border:1px solid var(--border);color:#fff;padding:0.8rem 0.95rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.91rem;transition:border-color 0.2s;outline:none;width:100%}
+.fg2 input::placeholder,.fg2 textarea::placeholder{color:var(--muted)}
+.fg2 input:focus,.fg2 select:focus,.fg2 textarea:focus{border-color:var(--amber)}
+.fg2 select option{background:#0f2f50;color:#fff}
+.rgrp{display:flex;flex-direction:column;gap:0.68rem}
+.ropt{display:flex;align-items:center;gap:0.72rem;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:6px;padding:0.82rem 0.95rem;cursor:pointer;transition:all 0.2s}
+.ropt:hover{border-color:rgba(245,166,35,0.36);background:rgba(245,166,35,0.05)}
+.ropt input[type=radio]{accent-color:var(--amber);width:14px;height:14px}
+.ropt span{font-size:0.87rem}
+.bktypes{display:grid;grid-template-columns:1fr 1fr;gap:0.95rem}
+.bktype{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:1.35rem;cursor:pointer;transition:all 0.2s;text-align:center;color:#fff;font-family:'DM Sans',sans-serif}
+.bktype:hover,.bktype.sel{border-color:var(--amber);background:rgba(245,166,35,0.07)}
+.bktype .ti{font-size:1.85rem;margin-bottom:0.42rem}
+.bktype .tl{font-weight:600;font-size:0.91rem}
+.bktype .ts{font-size:0.74rem;color:var(--muted);margin-top:0.16rem}
+.subbtn{width:100%;background:var(--amber);color:#0d2a4a;border:none;padding:1.1rem;font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;border-radius:6px;cursor:pointer;transition:all 0.2s}
+.subbtn:hover{background:var(--amber-deep);transform:translateY(-2px);box-shadow:0 8px 28px rgba(245,166,35,0.26)}
+.succ{text-align:center;padding:3.8rem 2rem;display:none}
+.succ.active{display:block}
+.succ-ico{font-size:3.6rem;margin-bottom:1.3rem}
+.succ h2{font-family:'Playfair Display',serif;font-size:1.85rem;margin-bottom:0.72rem}
+.succ p{color:var(--muted);font-size:0.95rem;line-height:1.7;font-weight:300}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){
+  nav{padding:0.85rem 1.3rem} nav ul{display:none}
+  section{padding:3.6rem 1.3rem}
+  .hero{padding:6.2rem 1.3rem 2.6rem}
+  .hero-vis{display:none}
+  .cg,.sysg,.wyg,.tg{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:1.3rem;text-align:center;padding:1.9rem 1.3rem}
+  .flinks{justify-content:center}
+}
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1856530718356539');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1856530718356539&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#home">
+    <img src="logo.webp" alt="Brisbane Solar Battery Systems" width="44" height="44">
+    <div class="nb-text"><span class="l1">Brisbane Solar</span><span class="l2">Battery Systems</span></div>
+  </a>
+  <ul>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#calculator">Calculator</a></li>
+    <li><a href="#systems">Systems</a></li>
+    <li><a href="#benefits">Battery Benefits</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#blog">Blog</a></li>
+  </ul>
+  <div style="display:flex;gap:0.7rem;align-items:center"><button class="nav-cta-ghost" onclick="openContact()">Contact</button><button class="nav-cta" onclick="openBooking()">Get Free Quote</button></div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-photo"></div><div class="hero-bg"></div><div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="eyebrow">⚡ Queensland's Solar Battery Specialists</div>
+    <h1>Power Your<br>Home With<br><span class="a1">Pure</span> <span class="a2">Sunshine</span></h1>
+    <p class="hero-sub">Cut your energy bills to near zero. Store excess solar power and use it through the night — no grid dependency, no bill surprises.</p>
+    <div class="hero-btns">
+      <button class="btn-p" onclick="openBooking()">Get Free Quote →</button>
+      <button class="btn-g" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Calculate My Savings</button>
+    </div>
+    <div class="stats">
+      <div><div class="sn">98%</div><div class="sl">Customer Satisfaction</div></div>
+      <div><div class="sn">2,400+</div><div class="sl">Installs Completed</div></div>
+      <div><div class="sn">$3.2M</div><div class="sl">Saved for Customers</div></div>
+    </div>
+  </div>
+  <svg class="hero-vis" viewBox="0 0 500 420" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#163d6a"/><stop offset="100%" stop-color="#0d2a4a"/></linearGradient>
+      <linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F5A623"/><stop offset="100%" stop-color="#E8891A"/></linearGradient>
+      <radialGradient id="glo" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(42,181,176,0.16)"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+    </defs>
+    <ellipse cx="250" cy="210" rx="205" ry="168" fill="url(#glo)"/>
+    <rect x="148" y="288" width="204" height="112" rx="12" fill="#0f2f50" stroke="rgba(245,166,35,0.28)" stroke-width="1.5"/>
+    <rect x="164" y="302" width="172" height="80" rx="8" fill="url(#pg)"/>
+    <rect x="175" y="313" width="55" height="12" rx="3" fill="rgba(42,181,176,0.5)"/>
+    <rect x="238" y="313" width="84" height="12" rx="3" fill="rgba(245,166,35,0.26)"/>
+    <rect x="175" y="331" width="148" height="8" rx="2" fill="rgba(255,255,255,0.05)"/>
+    <rect x="175" y="331" width="102" height="8" rx="2" fill="rgba(42,181,176,0.52)"/>
+    <text x="175" y="355" font-family="monospace" font-size="8.5" fill="#2AB5B0">CHARGE: 87%  ·  3.6 kW OUTPUT</text>
+    <line x1="250" y1="288" x2="250" y2="240" stroke="rgba(245,166,35,0.36)" stroke-width="2" stroke-dasharray="4,3"/>
+    <g transform="translate(58,48) rotate(-7,220,125)">
+      <rect x="26" y="26" width="388" height="230" rx="8" fill="#0d2a4a" stroke="rgba(42,181,176,0.2)" stroke-width="1.5"/>
+      <g opacity="0.87">
+        <rect x="38" y="38" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.2)" stroke-width="0.5"/>
+        <rect x="104" y="38" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.2)" stroke-width="0.5"/>
+        <rect x="170" y="38" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.2)" stroke-width="0.5"/>
+        <rect x="236" y="38" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.2)" stroke-width="0.5"/>
+        <rect x="302" y="38" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.2)" stroke-width="0.5"/>
+        <rect x="368" y="38" width="40" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.2)" stroke-width="0.5"/>
+        <rect x="38" y="88" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="104" y="88" width="60" height="44" rx="2" fill="#1b3f62" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="170" y="88" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="236" y="88" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="302" y="88" width="60" height="44" rx="2" fill="#1b3f62" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="368" y="88" width="40" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="38" y="138" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="104" y="138" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="170" y="138" width="60" height="44" rx="2" fill="#1b3f62" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="236" y="138" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="302" y="138" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="368" y="138" width="40" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="38" y="188" width="60" height="44" rx="2" fill="#1b3f62" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="104" y="188" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="170" y="188" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="236" y="188" width="60" height="44" rx="2" fill="#1b3f62" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="302" y="188" width="60" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+        <rect x="368" y="188" width="40" height="44" rx="2" fill="url(#pg)" stroke="rgba(42,181,176,0.15)" stroke-width="0.5"/>
+      </g>
+    </g>
+    <circle cx="430" cy="66" r="29" fill="url(#sg)" opacity="0.94"/>
+    <g stroke="#F5A623" stroke-width="1.8" opacity="0.52">
+      <line x1="430" y1="27" x2="430" y2="17"/><line x1="430" y1="105" x2="430" y2="117"/>
+      <line x1="391" y1="66" x2="379" y2="66"/><line x1="469" y1="66" x2="481" y2="66"/>
+      <line x1="403" y1="38" x2="396" y2="31"/><line x1="457" y1="94" x2="464" y2="101"/>
+      <line x1="457" y1="38" x2="464" y2="31"/><line x1="403" y1="94" x2="396" y2="101"/>
+    </g>
+    <circle cx="218" cy="270" r="4" fill="#2AB5B0" opacity="0.88"><animate attributeName="cy" values="270;284;270" dur="2s" repeatCount="indefinite"/></circle>
+    <circle cx="250" cy="270" r="4" fill="#F5A623" opacity="0.88"><animate attributeName="cy" values="270;284;270" dur="2s" begin="0.28s" repeatCount="indefinite"/></circle>
+    <circle cx="282" cy="270" r="4" fill="#2AB5B0" opacity="0.88"><animate attributeName="cy" values="270;284;270" dur="2s" begin="0.56s" repeatCount="indefinite"/></circle>
+  </svg>
+</section>
+
+<section id="how">
+  <div class="sl-sec">The Process</div>
+  <div class="st">Up and <em>running</em> in four steps</div>
+  <div class="steps">
+    <div class="step"><div class="sno">01</div><div class="sico">📞</div><h3>Free Consultation</h3><p>Book a call or site visit. We assess your energy usage, roof suitability and goals — no hard sell, just honest expert advice.</p></div>
+    <div class="step"><div class="sno">02</div><div class="sico">📐</div><h3>Custom Design</h3><p>Our engineers design a system sized perfectly for your home. We handle all permits and network applications.</p></div>
+    <div class="step"><div class="sno">03</div><div class="sico">🔧</div><h3>Professional Install</h3><p>CEC-accredited installers complete most residential systems in a single day. Zero disruption, full clean-up guaranteed.</p></div>
+    <div class="step"><div class="sno">04</div><div class="sico">📊</div><h3>Monitor &amp; Save</h3><p>Track real-time generation, storage and savings via our app. 10-year performance guarantee included.</p></div>
+  </div>
+</section>
+
+<section id="calculator">
+  <div class="sl-sec">Savings Calculator</div>
+  <div class="st">See your <em>real</em> annual savings</div>
+  <p class="ss">Slide the controls to match your situation and get an instant estimate of what you could save each year.</p>
+  <div class="cg">
+    <div class="cf">
+      <div class="f"><label>Annual Electricity Bill</label><div class="fv" id="bd">$3,000</div><input type="range" id="bs" min="1000" max="10000" step="100" value="3000" oninput="calc()"><div class="rl"><span>$1,000</span><span>$10,000</span></div></div>
+      <div class="f"><label>Solar System Size</label><div class="fv" id="sd">10 kW</div><input type="range" id="ss" min="3" max="30" step="1" value="10" oninput="calc()"><div class="rl"><span>3 kW</span><span>30 kW</span></div></div>
+      <div class="f"><label>Battery Storage Capacity</label><div class="fv" id="btd">10 kWh</div><input type="range" id="bts" min="5" max="40" step="2.5" value="10" oninput="calc()"><div class="rl"><span>5 kWh</span><span>40 kWh</span></div></div>
+    </div>
+    <div class="rb">
+      <div class="rb-lbl">Estimated Annual Savings</div>
+      <div class="rb-big" id="tot">$1,890</div>
+      <div class="rb-sub" id="pct">Saving ~63% on your electricity bill</div>
+      <div class="rrows">
+        <div class="rrow"><span class="rlb">⚡ Solar self-consumption savings</span><span class="rvl g" id="ss2">$1,120</span></div>
+        <div class="rrow"><span class="rlb">🔋 Battery discharge savings</span><span class="rvl g" id="bsav">$530</span></div>
+        <div class="rrow"><span class="rlb">↩ Feed-in tariff earnings</span><span class="rvl o" id="fit">$240</span></div>
+        <div class="rrow"><span class="rlb">📅 Payback period estimate</span><span class="rvl" id="pb" style="color:#fff">6.8 yrs</span></div>
+      </div>
+      <p class="disc">* Estimates based on SE Queensland average tariffs (31¢/kWh) and 4.8 peak sun hours/day. Actual savings vary by usage patterns, roof orientation and shading.</p>
+      <button class="btn-p" style="width:100%;margin-top:1.3rem" onclick="openBooking()">Get My Exact Quote →</button>
+    </div>
+  </div>
+</section>
+
+<section id="systems">
+  <div class="sl-sec">System Packages</div>
+  <div class="st">Find your <em>perfect</em> system</div>
+  <div class="sysg">
+    <div class="sysc">
+      <h3>Essential</h3><div class="skw">6.6 kW Solar + 10 kWh Battery</div>
+      <ul class="sf"><li>Ideal for 1–2 person households</li><li>Premium tier-1 panels</li><li>Hybrid inverter included</li><li>Smart monitoring app</li><li>10-year workmanship warranty</li></ul>
+      <div class="sp">From $9,990</div><div class="sn2">After STC government rebate</div>
+    </div>
+    <div class="sysc feat">
+      <div class="badge">Most Popular</div>
+      <h3>Family</h3><div class="skw">13.2 kW Solar + 20 kWh Battery</div>
+      <ul class="sf"><li>Ideal for 3–5 person households</li><li>Bifacial high-efficiency panels</li><li>Backup power capability</li><li>EV charger ready</li><li>10-year performance guarantee</li></ul>
+      <div class="sp">From $17,490</div><div class="sn2">After STC government rebate</div>
+    </div>
+    <div class="sysc">
+      <h3>PowerHouse</h3><div class="skw">20+ kW Solar + 30 kWh Battery</div>
+      <ul class="sf"><li>Large homes &amp; small businesses</li><li>Full home backup capable</li><li>3-phase power compatible</li><li>Virtual power plant ready</li><li>Priority support &amp; annual service</li></ul>
+      <div class="sp">From $26,990</div><div class="sn2">Custom engineered for your property</div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="sl-sec">Why Choose Us</div>
+  <div class="st">The difference is in<br>the <em>details</em></div>
+  <div class="wyg">
+    <div class="wyc"><div class="wyico">🎓</div><div><h3>CEC Accredited Installers</h3><p>Every installer is Clean Energy Council accredited. No subcontracting, no shortcuts — qualified, insured professionals every time.</p></div></div>
+    <div class="wyc"><div class="wyico">🛡️</div><div><h3>10-Year Performance Guarantee</h3><p>We guarantee your system will perform as designed for a decade. If it doesn't, we fix it — free of charge.</p></div></div>
+    <div class="wyc"><div class="wyico">📱</div><div><h3>Real-Time Monitoring</h3><p>Track solar generation, battery charge and grid usage live via our intuitive app. Know your savings down to the cent.</p></div></div>
+    <div class="wyc"><div class="wyico">🔋</div><div><h3>Premium Battery Brands</h3><p>We only install proven brands — Tesla Powerwall, Sungrow, Enphase and BYD — backed by full manufacturer warranties.</p></div></div>
+    <div class="wyc"><div class="wyico">☎️</div><div><h3>Local Brisbane Team</h3><p>Based right here in Brisbane. Real local support, same-day callbacks, and technicians who know QLD network requirements inside out.</p></div></div>
+    <div class="wyc"><div class="wyico">⚡</div><div><h3>Fast, Clean Installations</h3><p>Most residential systems completed in a single day. Our teams leave your property clean and your system running perfectly.</p></div></div>
+  </div>
+</section>
+
+<section id="benefits">
+  <div class="sl-sec">Battery Benefits</div>
+  <div class="st">Why a home battery<br>changes <em>everything</em></div>
+  <p class="ss">A solar battery doesn't just store energy — it fundamentally changes your relationship with the grid. Here's what you gain from day one.</p>
+  <div class="beng">
+    <div class="benc">
+      <div class="benico">💸</div>
+      <div>
+        <h3>Dramatically Lower Bills</h3>
+        <p>Store the solar energy you generate during the day and use it at night, when grid electricity is most expensive. Most households see bills drop by 60–90%, with many reaching near-zero quarterly costs.</p>
+      </div>
+    </div>
+    <div class="benc">
+      <div class="benico">🌩️</div>
+      <div>
+        <h3>Blackout Protection</h3>
+        <p>Keep your lights, fridge, and essential appliances running during grid outages. With battery backup, a power cut becomes little more than an inconvenience — your home stays powered automatically.</p>
+      </div>
+    </div>
+    <div class="benc">
+      <div class="benico">📈</div>
+      <div>
+        <h3>Protection Against Rising Tariffs</h3>
+        <p>Queensland electricity prices have risen steadily for over a decade. A battery system locks in energy independence now, insulating you from future price hikes for years to come.</p>
+      </div>
+    </div>
+    <div class="benc">
+      <div class="benico">🌿</div>
+      <div>
+        <h3>Reduced Carbon Footprint</h3>
+        <p>Using your own stored solar instead of grid power means fewer fossil fuels burned on your behalf. A typical home battery system offsets 1.5–2.5 tonnes of CO₂ per year — the equivalent of planting 70+ trees annually.</p>
+      </div>
+    </div>
+    <div class="benc">
+      <div class="benico">🏠</div>
+      <div>
+        <h3>Increased Property Value</h3>
+        <p>Australian research consistently shows solar and battery systems add tangible value at sale. Buyers increasingly expect energy-efficient homes, and a complete solar-battery system is a genuine selling point.</p>
+      </div>
+    </div>
+    <div class="benc">
+      <div class="benico">⚡</div>
+      <div>
+        <h3>Smarter Energy Management</h3>
+        <p>Modern battery systems use intelligent software to optimise when to store, when to use, and when to sell back to the grid. Your system works harder over time — learning your usage patterns to maximise every dollar saved.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testi">
+  <div class="sl-sec">Customer Stories</div>
+  <div class="st">Real savings,<br><em>real people</em></div>
+  <div class="tg">
+    <div class="tc"><div class="stars">★★★★★</div><p class="tq">"Our quarterly bill went from $680 to $28. I genuinely couldn't believe it. The install took one day and the team were incredibly professional."</p><div class="tw">Sarah M.</div><div class="tl2">Kenmore, Brisbane</div></div>
+    <div class="tc"><div class="stars">★★★★★</div><p class="tq">"We had an old 5kW system and Brisbane Solar Battery added a battery retrofit. Night-time usage is now almost entirely free. Wish we'd done it sooner."</p><div class="tw">David &amp; Jan P.</div><div class="tl2">Toowoomba</div></div>
+    <div class="tc"><div class="stars">★★★★★</div><p class="tq">"From quote to install in 12 days. The app is brilliant — I can see exactly what the system is doing in real time. Saving about $2,400 a year."</p><div class="tw">Marcus T.</div><div class="tl2">Gold Coast</div></div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2>Ready to cut your power bill for good?</h2>
+  <p>Join 2,400+ Queensland households already generating their own clean energy — and saving thousands every year.</p>
+  <button class="btn-p" onclick="openBooking()">Get My Free Quote →</button>
+</div>
+
+<section id="blog" style="padding:4rem 4rem 5rem;background:#000">
+  <div class="sl-sec">Resources</div>
+  <div class="st">Solar & Battery<br><em>Insights</em></div>
+  <div style="margin-top:2.5rem">
+   <div id="soro-blog"></div>
+<script src="https://app.trysoro.com/api/embed/a951a5e5-1354-43f8-ad5e-71031f738d98?theme=dark" defer></script>
+  </div>
+</section>
+
+<footer>
+  <div class="fb"><img src="logo.webp" alt="logo" width="44" height="44" loading="lazy"><span>Brisbane Solar Battery Systems</span></div>
+  <p>© 2025 Brisbane Solar Battery Systems Pty Ltd · ABN 67 437 267 923 · CEC Approved Retailer</p>
+  <div class="flinks"><a href="privacy-policy.html">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></div>
+</footer>
+
+<div id="booking">
+  <div class="bki">
+    <button class="bkback" onclick="closeBooking()">← Back to Brisbane Solar Battery Systems</button>
+    <div id="bkForm">
+        <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin:0 0 1.5rem 0">Fill in the form below to request your free quote. We'll be in touch within one business day.</p>
+        <div style="border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.1)">
+          <iframe
+            src="https://book.servicem8.com/request_booking?uuid=45c157f4-41d1-472e-bc67-242727a696bb"
+            style="width:100%;height:740px;border:none;display:block;background:#fff"
+            title="Request a Free Quote"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function f(n){return '$'+Math.round(n).toLocaleString()}
+function calc(){
+  const bill=+document.getElementById('bs').value;
+  const solar=+document.getElementById('ss').value;
+  const batt=+document.getElementById('bts').value;
+  document.getElementById('bd').textContent=f(bill);
+  document.getElementById('sd').textContent=solar+' kW';
+  document.getElementById('btd').textContent=batt+' kWh';
+  const t=0.31,fi=0.10,sh=4.8,d=365;
+  const gen=solar*sh*d;
+  const scR=Math.min(0.43+(batt/74),0.81);
+  const sc=gen*scR;
+  const exp=gen-sc;
+  const bsav=Math.min(batt*272*t,bill*0.34);
+  const ssav=Math.min(sc*t,bill*0.70);
+  const fite=exp*fi;
+  const tot=ssav+bsav+fite;
+  const p=Math.round((tot/bill)*100);
+  const cost=(solar*600)+(batt*300)+2000;
+  const pb=(cost/tot).toFixed(1);
+  document.getElementById('tot').textContent=f(tot);
+  document.getElementById('pct').textContent='Saving ~'+Math.min(p,94)+'% on your electricity bill';
+  document.getElementById('ss2').textContent=f(ssav);
+  document.getElementById('bsav').textContent=f(bsav);
+  document.getElementById('fit').textContent=f(fite);
+  document.getElementById('pb').textContent=pb+' yrs';
+}
+calc();
+function openBooking(){document.getElementById('booking').classList.add('active');document.body.style.overflow='hidden';document.getElementById('booking').scrollTop=0}
+function closeBooking(){document.getElementById('booking').classList.remove('active');document.body.style.overflow=''}
+function selT(el){document.querySelectorAll('.bktype').forEach(b=>b.classList.remove('sel'));el.classList.add('sel')}
+function sub(){}
+
+function openContact() {
+  document.getElementById('contact').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeContact() {
+  document.getElementById('contact').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+async function submitContact() {
+  const name    = document.getElementById('ctname').value.trim();
+  const email   = document.getElementById('ctemail').value.trim();
+  const phone   = document.getElementById('ctphone').value.trim();
+  const suburb  = document.getElementById('ctsuburb').value.trim();
+  const message = document.getElementById('ctmessage').value.trim();
+  const existingEl = document.querySelector('input[name="existing"]:checked');
+  const existing = existingEl ? existingEl.value : 'not specified';
+
+  if (!name)    { alert('Please enter your full name.');    return; }
+  if (!email)   { alert('Please enter your email address.'); return; }
+  if (!message) { alert('Please describe how we can help.'); return; }
+
+  const btn = document.querySelector('.ctsubbtn');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('/submit-contact.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, phone, suburb, existing, message })
+    });
+    const data = await res.json();
+    if (res.ok && data.success) {
+      document.getElementById('ctForm').style.display = 'none';
+      document.getElementById('ctSuccess').classList.add('active');
+      document.getElementById('contact').scrollTop = 0;
+    } else {
+      alert('Something went wrong. Please email us directly at sbsbrisbane@gmail.com');
+    }
+  } catch (err) {
+    alert('Something went wrong. Please email us directly at sbsbrisbane@gmail.com');
+  } finally {
+    btn.textContent = 'Send Message ✉️';
+    btn.disabled = false;
+  }
+}
+
+</script>
+
+<div id="contact">
+  <div class="cti">
+    <button class="bkback" onclick="closeContact()">← Back to site</button>
+    <div class="bkh">
+      <div class="bklogo">
+        <img src="logo.webp" alt="Brisbane Solar Battery Systems" width="44" height="44" loading="lazy">
+        <div class="bklt"><span class="bl1">BRISBANE SOLAR</span><span class="bl2">BATTERY SYSTEMS</span></div>
+      </div>
+      <h2>Contact Us</h2>
+      <p>Have a question or need support? Fill in the form below and we'll get back to you as soon as possible.</p>
+    </div>
+
+    <div id="ctForm">
+      <div class="bks">
+        <h3>Your Details</h3>
+        <div class="fgrp">
+          <div class="fg"><label>Full Name *</label><input type="text" id="ctname" placeholder="Jane Smith"></div>
+          <div class="fg"><label>Email Address *</label><input type="email" id="ctemail" placeholder="jane@example.com"></div>
+        </div>
+        <div class="fgrp">
+          <div class="fg"><label>Phone Number</label><input type="tel" id="ctphone" placeholder="04xx xxx xxx"></div>
+          <div class="fg"><label>Suburb</label><input type="text" id="ctsuburb" placeholder="e.g. Kenmore"></div>
+        </div>
+      </div>
+
+      <div class="bks">
+        <h3>About Your Enquiry</h3>
+        <div class="fg2"><label>Are you an existing customer?</label><div class="rgrp">
+          <label class="ropt"><input type="radio" name="existing" value="yes"><span>Yes, I'm an existing customer</span></label>
+          <label class="ropt"><input type="radio" name="existing" value="no"><span>No, I'm a new enquiry</span></label>
+        </div></div>
+        <div class="fg2"><label>How can we help? *</label>
+          <textarea id="ctmessage" rows="5" placeholder="Please describe your question or concern in as much detail as possible..." style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:6px;padding:0.85rem 1rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.9rem;resize:vertical;outline:none;transition:border-color 0.2s"></textarea>
+        </div>
+      </div>
+
+      <button class="subbtn ctsubbtn" onclick="submitContact()">Send Message ✉️</button>
+    </div>
+
+    <div class="ct-success" id="ctSuccess">
+      <div class="tick">✅</div>
+      <h2>Message Sent!</h2>
+      <p>Thanks for getting in touch. We'll reply to your email within one business day.<br><br>If your matter is urgent, call us directly on <strong>(07) 3xxx xxxx</strong>.</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
