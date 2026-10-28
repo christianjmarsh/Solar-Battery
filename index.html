@@ -156,15 +156,18 @@ footer p{color:var(--muted);font-size:0.78rem}
 .bklt .bl2{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:1.5px;color:var(--amber);display:block;line-height:1.1}
 .bkh h2{font-family:'Playfair Display',serif;font-size:1.88rem;margin-bottom:0.65rem}
 .bkh p{color:var(--muted);font-size:0.95rem;font-weight:300}
-.bkform{display:flex;flex-direction:column;gap:2.2rem}
+.bkform,#ctForm{display:flex;flex-direction:column;gap:2.2rem}
 .bks{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:1.85rem}
 .bks h3{font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:1.3rem}
+.fgrp{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.05rem}
+.fgrp:last-child{margin-bottom:0}
+.fg{display:flex;flex-direction:column;gap:0.42rem}
 .fg2{display:flex;flex-direction:column;gap:0.42rem;margin-bottom:1.05rem}
 .fg2:last-child{margin-bottom:0}
-.fg2 label{font-size:0.87rem;font-weight:500}
-.fg2 input,.fg2 select,.fg2 textarea{background:rgba(255,255,255,0.06);border:1px solid var(--border);color:#fff;padding:0.8rem 0.95rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.91rem;transition:border-color 0.2s;outline:none;width:100%}
-.fg2 input::placeholder,.fg2 textarea::placeholder{color:var(--muted)}
-.fg2 input:focus,.fg2 select:focus,.fg2 textarea:focus{border-color:var(--amber)}
+.fg2 label,.fg label{font-size:0.87rem;font-weight:500}
+.fg2 input,.fg2 select,.fg2 textarea,.fg input{background:rgba(255,255,255,0.06);border:1px solid var(--border);color:#fff;padding:0.8rem 0.95rem;border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.91rem;transition:border-color 0.2s;outline:none;width:100%}
+.fg2 input::placeholder,.fg2 textarea::placeholder,.fg input::placeholder{color:var(--muted)}
+.fg2 input:focus,.fg2 select:focus,.fg2 textarea:focus,.fg input:focus{border-color:var(--amber)}
 .fg2 select option{background:#0f2f50;color:#fff}
 .rgrp{display:flex;flex-direction:column;gap:0.68rem}
 .ropt{display:flex;align-items:center;gap:0.72rem;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:6px;padding:0.82rem 0.95rem;cursor:pointer;transition:all 0.2s}
@@ -191,7 +194,7 @@ footer p{color:var(--muted);font-size:0.78rem}
   section{padding:3.6rem 1.3rem}
   .hero{padding:6.2rem 1.3rem 2.6rem}
   .hero-vis{display:none}
-  .cg,.sysg,.wyg,.tg{grid-template-columns:1fr}
+  .cg,.sysg,.wyg,.tg,.fgrp{grid-template-columns:1fr}
   footer{flex-direction:column;gap:1.3rem;text-align:center;padding:1.9rem 1.3rem}
   .flinks{justify-content:center}
 }
@@ -455,7 +458,7 @@ src="https://www.facebook.com/tr?id=1856530718356539&ev=PageView&noscript=1"
 
 <footer>
   <div class="fb"><img src="logo.webp" alt="logo" width="44" height="44" loading="lazy"><span>Brisbane Solar Battery Systems</span></div>
-  <p>© 2025 Brisbane Solar Battery Systems Pty Ltd · ABN 67 437 267 923 · CEC Approved Retailer</p>
+  <p>© 2026 Brisbane Solar Battery Systems Pty Ltd · ABN 67 437 267 923 · CEC Approved Retailer</p>
   <div class="flinks"><a href="privacy-policy.html">Privacy</a><a href="#" onclick="openContact();return false">Contact</a></div>
 </footer>
 
