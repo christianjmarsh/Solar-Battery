@@ -16,6 +16,70 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type');
 
+// SMTP login details live outside public_html so they are never served or committed:
+// <domain folder>/contact-mail-config.php returning
+// ['host' => 'smtp.hostinger.com', 'port' => 465, 'user' => FROM_EMAIL, 'pass' => '...'].
+// Sending through the mailbox gets the message DKIM-signed for our domain, so DMARC passes.
+// Without the file, fall back to PHP mail().
+$configFile = dirname($_SERVER['DOCUMENT_ROOT']) . '/contact-mail-config.php';
+$smtpError = null;
+try {
+    $smtp = is_file($configFile) ? include $configFile : null;
+    if ($smtp !== null && !is_array($smtp)) { $smtpError = 'config file does not return an array'; $smtp = null; }
+} catch (\Throwable $e) {
+    $smtpError = 'config file error on line ' . $e->getLine() . ': ' . $e->getMessage();
+    $smtp = null;
+}
+
+// Returns null on success, otherwise the step that failed. With $to null, stops after logging in.
+function smtp_send(array $cfg, ?string $to, string $subject = '', string $headers = '', string $body = ''): ?string {
+    $prefix = ($cfg['secure'] ?? 'ssl') === 'ssl' ? 'ssl://' : 'tcp://';
+    $fp = @stream_socket_client($prefix . $cfg['host'] . ':' . $cfg['port'], $errno, $errstr, 15);
+    if (!$fp) { error_log("contact smtp connect failed: $errstr"); return "connect: $errstr"; }
+    stream_set_timeout($fp, 15);
+    $failure = null;
+    $expect = function (string $code) use ($fp, &$failure): bool {
+        $reply = '';
+        while (($line = fgets($fp, 515)) !== false) {
+            $reply .= $line;
+            if (strlen($line) < 4 || $line[3] !== '-') break;
+        }
+        if (strncmp($reply, $code, 3) !== 0) { $failure = 'server replied: ' . trim($reply); error_log('contact smtp ' . $failure); return false; }
+        return true;
+    };
+    $cmd = function (string $line, string $code) use ($fp, $expect): bool {
+        fwrite($fp, $line . "\r\n");
+        return $expect($code);
+    };
+    $message = 'Date: ' . date('r') . "\r\n"
+             . 'Message-ID: <' . bin2hex(random_bytes(12)) . '@' . substr(strrchr(FROM_EMAIL, '@'), 1) . ">\r\n"
+             . 'To: <' . $to . ">\r\n"
+             . 'Subject: =?UTF-8?B?' . base64_encode($subject) . "?=\r\n"
+             . $headers . "\r\n\r\n" . $body;
+    $message = preg_replace('/^\./m', '..', str_replace(["\r\n", "\r", "\n"], ["\n", "\n", "\r\n"], $message));
+    $ok = $expect('220')
+       && $cmd('EHLO ' . ($_SERVER['SERVER_NAME'] ?? 'localhost'), '250')
+       && $cmd('AUTH LOGIN', '334')
+       && $cmd(base64_encode($cfg['user']), '334')
+       && $cmd(base64_encode($cfg['pass']), '235')
+       && ($to === null || $cmd('MAIL FROM:<' . FROM_EMAIL . '>', '250')
+       && $cmd('RCPT TO:<' . $to . '>', '250')
+       && $cmd('DATA', '354')
+       && $cmd($message . "\r\n.", '250'));
+    fwrite($fp, "QUIT\r\n");
+    fclose($fp);
+    return $ok ? null : ($failure ?? 'connection closed');
+}
+
+// Temporary self-test: GET ?check=1 checks the config and the SMTP login without sending mail.
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['check'])) {
+    if ($smtpError) { echo json_encode(['config' => $smtpError]); exit; }
+    if (!$smtp) { echo json_encode(['config' => 'not found, using PHP mail()']); exit; }
+    $failed = smtp_send($smtp, null);
+    echo json_encode(['config' => 'ok', 'smtp_login' => $failed ?? 'ok']);
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { http_response_code(204); exit; }
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); echo json_encode(['error'=>'Method not allowed']); exit; }
 
@@ -92,54 +156,8 @@ $mailBody  = "--{$boundary}\r\nContent-Type: text/plain; charset=UTF-8\r\nConten
 $mailBody .= "--{$boundary}\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($htmlBody)) . "\r\n";
 $mailBody .= "--{$boundary}--";
 
-// SMTP login details live outside public_html so they are never served or committed:
-// <domain folder>/contact-mail-config.php returning
-// ['host' => 'smtp.hostinger.com', 'port' => 465, 'user' => FROM_EMAIL, 'pass' => '...'].
-// Sending through the mailbox gets the message DKIM-signed for our domain, so DMARC passes.
-// Without the file, fall back to PHP mail().
-$configFile = dirname($_SERVER['DOCUMENT_ROOT']) . '/contact-mail-config.php';
-$smtp = is_file($configFile) ? include $configFile : null;
-
-function smtp_send(array $cfg, string $to, string $subject, string $headers, string $body): bool {
-    $prefix = ($cfg['secure'] ?? 'ssl') === 'ssl' ? 'ssl://' : 'tcp://';
-    $fp = @stream_socket_client($prefix . $cfg['host'] . ':' . $cfg['port'], $errno, $errstr, 15);
-    if (!$fp) { error_log("contact smtp connect failed: $errstr"); return false; }
-    stream_set_timeout($fp, 15);
-    $expect = function (string $code) use ($fp): bool {
-        $reply = '';
-        while (($line = fgets($fp, 515)) !== false) {
-            $reply .= $line;
-            if (strlen($line) < 4 || $line[3] !== '-') break;
-        }
-        if (strncmp($reply, $code, 3) !== 0) { error_log('contact smtp unexpected reply: ' . trim($reply)); return false; }
-        return true;
-    };
-    $cmd = function (string $line, string $code) use ($fp, $expect): bool {
-        fwrite($fp, $line . "\r\n");
-        return $expect($code);
-    };
-    $message = 'Date: ' . date('r') . "\r\n"
-             . 'Message-ID: <' . bin2hex(random_bytes(12)) . '@' . substr(strrchr(FROM_EMAIL, '@'), 1) . ">\r\n"
-             . 'To: <' . $to . ">\r\n"
-             . 'Subject: =?UTF-8?B?' . base64_encode($subject) . "?=\r\n"
-             . $headers . "\r\n\r\n" . $body;
-    $message = preg_replace('/^\./m', '..', str_replace(["\r\n", "\r", "\n"], ["\n", "\n", "\r\n"], $message));
-    $ok = $expect('220')
-       && $cmd('EHLO ' . ($_SERVER['SERVER_NAME'] ?? 'localhost'), '250')
-       && $cmd('AUTH LOGIN', '334')
-       && $cmd(base64_encode($cfg['user']), '334')
-       && $cmd(base64_encode($cfg['pass']), '235')
-       && $cmd('MAIL FROM:<' . FROM_EMAIL . '>', '250')
-       && $cmd('RCPT TO:<' . $to . '>', '250')
-       && $cmd('DATA', '354')
-       && $cmd($message . "\r\n.", '250');
-    fwrite($fp, "QUIT\r\n");
-    fclose($fp);
-    return $ok;
-}
-
-$sent = is_array($smtp)
-    ? smtp_send($smtp, TO_EMAIL, $subject, $headers, $mailBody)
+$sent = $smtp
+    ? smtp_send($smtp, TO_EMAIL, $subject, $headers, $mailBody) === null
     : mail(TO_EMAIL, $subject, $mailBody, $headers);
 
 http_response_code($sent ? 200 : 500);
