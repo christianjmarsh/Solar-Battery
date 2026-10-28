@@ -95,6 +95,15 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:19px;heigh
 .sp{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;margin-bottom:0.22rem}
 .sn2{font-size:0.74rem;color:var(--muted)}
 
+#brands{background:#0b2643;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.brg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:3.2rem}
+.brc{border:1px solid var(--border);border-radius:8px;padding:2.2rem 1.85rem;background:rgba(255,255,255,0.03);display:flex;flex-direction:column;scroll-margin-top:90px;transition:all 0.3s}
+.brc:hover,.brc:target{border-color:rgba(245,166,35,0.36);background:rgba(255,255,255,0.06)}
+.brc h3{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:1px;margin-bottom:0.26rem}
+.brc .skw{margin-bottom:1rem}
+.brc p{font-size:0.86rem;color:rgba(255,255,255,0.6);line-height:1.7;font-weight:300;margin-bottom:1.6rem;flex-grow:1}
+.brc .btn-p{width:100%}
+
 #why{background:#0d2a4a}
 .wyg{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-top:3.2rem}
 .wyc{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;padding:1.85rem;display:flex;gap:1.3rem;align-items:flex-start;transition:background 0.3s}
@@ -194,7 +203,7 @@ footer p{color:var(--muted);font-size:0.78rem}
   section{padding:3.6rem 1.3rem}
   .hero{padding:6.2rem 1.3rem 2.6rem}
   .hero-vis{display:none}
-  .cg,.sysg,.wyg,.tg,.fgrp{grid-template-columns:1fr}
+  .cg,.sysg,.brg,.wyg,.tg,.fgrp{grid-template-columns:1fr}
   footer{flex-direction:column;gap:1.3rem;text-align:center;padding:1.9rem 1.3rem}
   .flinks{justify-content:center}
 }
@@ -229,6 +238,7 @@ src="https://www.facebook.com/tr?id=1856530718356539&ev=PageView&noscript=1"
     <li><a href="#calculator">Calculator</a></li>
     <li><a href="#systems">Systems</a></li>
     <li><a href="#benefits">Battery Benefits</a></li>
+    <li><a href="#brands">Brands</a></li>
     <li><a href="#why">Why Us</a></li>
     <li><a href="#blog">Blog</a></li>
   </ul>
@@ -368,6 +378,29 @@ src="https://www.facebook.com/tr?id=1856530718356539&ev=PageView&noscript=1"
   </div>
 </section>
 
+<section id="brands">
+  <div class="sl-sec">Our Battery Brands</div>
+  <div class="st">Three brands we <em>trust</em></div>
+  <p class="ss">We supply and install home batteries from Fox ESS, GoodWe and Sigenergy, sized to your home and covered by full manufacturer warranties.</p>
+  <div class="brg">
+    <div class="brc" id="foxess">
+      <h3>Fox ESS</h3><div class="skw">Stackable home batteries</div>
+      <p>Battery modules that pair with Fox ESS hybrid inverters, so you can start with the storage you need and add more later.</p>
+      <button class="btn-p" onclick="openBooking('Fox ESS')">Get a Fox ESS Quote →</button>
+    </div>
+    <div class="brc" id="goodwe">
+      <h3>GoodWe</h3><div class="skw">Inverter &amp; battery specialist</div>
+      <p>A long-established inverter maker whose Lynx Home batteries pair with GoodWe hybrid inverters for a matched solar and storage system.</p>
+      <button class="btn-p" onclick="openBooking('GoodWe')">Get a GoodWe Quote →</button>
+    </div>
+    <div class="brc" id="sigenergy">
+      <h3>Sigenergy</h3><div class="skw">All-in-one SigenStor system</div>
+      <p>Inverter, battery and optional EV charging in one stacked unit, managed from a single app.</p>
+      <button class="btn-p" onclick="openBooking('Sigenergy')">Get a Sigenergy Quote →</button>
+    </div>
+  </div>
+</section>
+
 <section id="why">
   <div class="sl-sec">Why Choose Us</div>
   <div class="st">The difference is in<br>the <em>details</em></div>
@@ -375,7 +408,7 @@ src="https://www.facebook.com/tr?id=1856530718356539&ev=PageView&noscript=1"
     <div class="wyc"><div class="wyico">🎓</div><div><h3>CEC Accredited Installers</h3><p>Every installer is Clean Energy Council accredited. No subcontracting, no shortcuts — qualified, insured professionals every time.</p></div></div>
     <div class="wyc"><div class="wyico">🛡️</div><div><h3>10-Year Performance Guarantee</h3><p>We guarantee your system will perform as designed for a decade. If it doesn't, we fix it — free of charge.</p></div></div>
     <div class="wyc"><div class="wyico">📱</div><div><h3>Real-Time Monitoring</h3><p>Track solar generation, battery charge and grid usage live via our intuitive app. Know your savings down to the cent.</p></div></div>
-    <div class="wyc"><div class="wyico">🔋</div><div><h3>Premium Battery Brands</h3><p>We only install proven brands — Tesla Powerwall, Sungrow, Enphase and BYD — backed by full manufacturer warranties.</p></div></div>
+    <div class="wyc"><div class="wyico">🔋</div><div><h3>Premium Battery Brands</h3><p>We only install proven brands — Fox ESS, GoodWe and Sigenergy — backed by full manufacturer warranties.</p></div></div>
     <div class="wyc"><div class="wyico">☎️</div><div><h3>Local Brisbane Team</h3><p>Based right here in Brisbane. Real local support, same-day callbacks, and technicians who know QLD network requirements inside out.</p></div></div>
     <div class="wyc"><div class="wyico">⚡</div><div><h3>Fast, Clean Installations</h3><p>Most residential systems completed in a single day. Our teams leave your property clean and your system running perfectly.</p></div></div>
   </div>
@@ -510,7 +543,8 @@ function calc(){
   document.getElementById('pb').textContent=pb+' yrs';
 }
 calc();
-function openBooking(){document.getElementById('booking').classList.add('active');document.body.style.overflow='hidden';document.getElementById('booking').scrollTop=0}
+function track(ev,params){if(typeof fbq==='function')fbq('track',ev,params||{})}
+function openBooking(brand){document.getElementById('booking').classList.add('active');document.body.style.overflow='hidden';document.getElementById('booking').scrollTop=0;track('Contact',{content_name:typeof brand==='string'?brand:'General'})}
 function closeBooking(){document.getElementById('booking').classList.remove('active');document.body.style.overflow=''}
 function selT(el){document.querySelectorAll('.bktype').forEach(b=>b.classList.remove('sel'));el.classList.add('sel')}
 function sub(){}
@@ -551,6 +585,7 @@ async function submitContact() {
     if (res.ok && data.success) {
       document.getElementById('ctForm').style.display = 'none';
       document.getElementById('ctSuccess').classList.add('active');
+      track('Lead',{content_name:'Contact form'});
       document.getElementById('contact').scrollTop = 0;
     } else {
       alert('Something went wrong. Please email us directly at sbsbrisbane@gmail.com');
