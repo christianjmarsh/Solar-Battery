@@ -3,13 +3,12 @@
 //  Brisbane Solar Battery Systems — Contact Form Mailer
 //  Sends contact form submissions to sbsbrisbane@gmail.com
 //
-//  IMPORTANT: Change FROM_EMAIL to a real mailbox on your
-//  Hostinger hosting plan, e.g. info@yourdomain.com.au
-//  Create it in hPanel → Email → Email Accounts
+//  FROM_EMAIL must be a real mailbox on the Hostinger email plan
+//  (hPanel → Email → Email Accounts), or messages may go to spam.
 // ══════════════════════════════════════════════════════════════════
 
 define('TO_EMAIL',   'sbsbrisbane@gmail.com');
-define('FROM_EMAIL', 'noreply@brisbanesolarbattery.com'); // ← CHANGE THIS
+define('FROM_EMAIL', 'noreply@brisbanesolarbattery.com');
 define('FROM_NAME',  'Brisbane Solar Battery Systems Website');
 
 header('Content-Type: application/json');
