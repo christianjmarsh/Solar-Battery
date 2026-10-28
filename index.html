@@ -344,27 +344,27 @@ src="https://www.facebook.com/tr?id=1856530718356539&ev=PageView&noscript=1"
 <section id="brands">
   <div class="sl-sec">Battery Packages</div>
   <div class="st">Three trusted brands,<br><em>all-inclusive</em> pricing</div>
-  <p class="ss">Every package includes a 10 kW hybrid inverter, GST and the STC government rebate, installed by SAA-accredited installers.</p>
+  <p class="ss">Every package is fully installed by SAA-accredited installers and includes a 10 kW hybrid inverter, GST and the STC government rebate.</p>
   <div class="brg">
     <div class="brc" id="foxess">
       <h3>Fox ESS</h3><div class="skw">28 kWh Battery · Stackable</div>
       <p>Battery modules that pair with a Fox ESS hybrid inverter, so you can add more storage later.</p>
       <ul class="sf"><li>28 kWh home battery</li><li>10 kW hybrid inverter included</li><li>10-year manufacturer warranty</li><li>10-year workmanship warranty</li><li>Installed in a single day</li></ul>
-      <div class="sp">$5,990</div><div class="sn2">Includes GST &amp; STC government rebate</div>
+      <div class="sp">$5,990</div><div class="sn2">Fully installed · incl. GST &amp; STC rebate</div>
       <button class="btn-p" onclick="openBooking('Fox ESS')">Get a Fox ESS Quote →</button>
     </div>
     <div class="brc" id="goodwe">
       <h3>GoodWe</h3><div class="skw">25 kWh Battery · Lynx Home</div>
       <p>A long-established inverter maker whose Lynx Home batteries pair with a GoodWe hybrid inverter.</p>
       <ul class="sf"><li>25 kWh home battery</li><li>10 kW hybrid inverter included</li><li>10-year manufacturer warranty</li><li>10-year workmanship warranty</li><li>Installed in a single day</li></ul>
-      <div class="sp">$8,990</div><div class="sn2">Includes GST &amp; STC government rebate</div>
+      <div class="sp">$8,990</div><div class="sn2">Fully installed · incl. GST &amp; STC rebate</div>
       <button class="btn-p" onclick="openBooking('GoodWe')">Get a GoodWe Quote →</button>
     </div>
     <div class="brc" id="sigenergy">
       <h3>Sigenergy</h3><div class="skw">24 kWh Battery · SigenStor</div>
       <p>An all-in-one system with inverter and battery modules in one sleek stacked unit.</p>
       <ul class="sf"><li>24 kWh home battery</li><li>10 kW hybrid inverter included</li><li>10-year manufacturer warranty</li><li>10-year workmanship warranty</li><li>Installed in a single day</li></ul>
-      <div class="sp">$12,799</div><div class="sn2">Includes GST &amp; STC government rebate</div>
+      <div class="sp">$12,799</div><div class="sn2">Fully installed · incl. GST &amp; STC rebate</div>
       <button class="btn-p" onclick="openBooking('Sigenergy')">Get a Sigenergy Quote →</button>
     </div>
   </div>
@@ -376,7 +376,7 @@ src="https://www.facebook.com/tr?id=1856530718356539&ev=PageView&noscript=1"
   <div class="wyg">
     <div class="wyc"><div class="wyico">🎓</div><div><h3>SAA Accredited Installers</h3><p>Every installation is carried out by installers accredited by Solar Accreditation Australia (SAA).</p></div></div>
     <div class="wyc"><div class="wyico">🛡️</div><div><h3>10 + 10 Year Warranties</h3><p>A 10-year manufacturer warranty on your battery and a 10-year workmanship warranty on our installation.</p></div></div>
-    <div class="wyc"><div class="wyico">💲</div><div><h3>All-Inclusive Pricing</h3><p>Package prices include a 10 kW hybrid inverter, GST and the STC government rebate. No hidden extras.</p></div></div>
+    <div class="wyc"><div class="wyico">💲</div><div><h3>All-Inclusive Pricing</h3><p>Package prices are fully installed and include a 10 kW hybrid inverter, GST and the STC government rebate. No hidden extras.</p></div></div>
     <div class="wyc"><div class="wyico">🔋</div><div><h3>Premium Battery Brands</h3><p>We only install proven brands — Fox ESS, GoodWe and Sigenergy — backed by full manufacturer warranties.</p></div></div>
     <div class="wyc"><div class="wyico">☎️</div><div><h3>Local SE Queensland Team</h3><p>Based in Brisbane and servicing the Gold Coast, Sunshine Coast and Toowoomba. Real local support from technicians who know QLD network requirements inside out.</p></div></div>
     <div class="wyc"><div class="wyico">⚡</div><div><h3>Fast, Clean Installations</h3><p>Your system is installed in a single day, and our team leaves your property clean.</p></div></div>
@@ -503,7 +503,7 @@ function calc(){
 }
 calc();
 function track(ev,params){if(typeof fbq==='function')fbq('track',ev,params||{})}
-function openBooking(brand){document.getElementById('booking').classList.add('active');document.body.style.overflow='hidden';document.getElementById('booking').scrollTop=0;track('Contact',{content_name:typeof brand==='string'?brand:'General'})}
+function openBooking(brand){document.getElementById('booking').classList.add('active');document.body.style.overflow='hidden';document.getElementById('booking').scrollTop=0;track('Lead',{content_name:typeof brand==='string'?brand:'Quote form'})}
 function closeBooking(){document.getElementById('booking').classList.remove('active');document.body.style.overflow=''}
 function selT(el){document.querySelectorAll('.bktype').forEach(b=>b.classList.remove('sel'));el.classList.add('sel')}
 function sub(){}
