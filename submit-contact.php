@@ -71,14 +71,6 @@ function smtp_send(array $cfg, ?string $to, string $subject = '', string $header
     return $ok ? null : ($failure ?? 'connection closed');
 }
 
-// Temporary self-test: GET ?check=1 checks the config and the SMTP login without sending mail.
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['check'])) {
-    if ($smtpError) { echo json_encode(['config' => $smtpError]); exit; }
-    if (!$smtp) { echo json_encode(['config' => 'not found, using PHP mail()']); exit; }
-    $failed = smtp_send($smtp, null);
-    echo json_encode(['config' => 'ok', 'smtp_login' => $failed ?? 'ok']);
-    exit;
-}
 
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { http_response_code(204); exit; }
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); echo json_encode(['error'=>'Method not allowed']); exit; }
